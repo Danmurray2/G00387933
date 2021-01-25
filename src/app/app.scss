@@ -1,0 +1,18 @@
+// http://ionicframework.com/docs/theming/
+
+@font-face {
+        font-family: Poppins;
+        src: url('../assets/Fonts/Poppins.woff2'); 
+        //New Folder called Fonts created in assets directory.
+}
+
+*{ // entire app will display in this font
+    font-family: Poppins; 
+}
+
+
+
+
+//selected elements will display in this font
+//body, span, button, h1, h2, h3, h4, p, ion-item, ion-title {
+//    font-family: Poppins !important;}

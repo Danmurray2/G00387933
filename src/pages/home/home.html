@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title> <h4>Weather App</h4>
+      <h6>Click settings icon to start</h6>
+      <ion-buttons end (click)="click()">
+        <button ion-button>
+         <ion-icon name ="settings" size="large" ></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+ <h1><b>Weather for {{ cityName }}</b></h1>
+
+ <p [hidden]="cityFound"> City Not Found </p>  
+
+  <h3><b>{{ weatherConditions }}</b></h3> 
+ <p><img src='{{"http://openweathermap.org/img/w/"+icon+".png"}}'> </p>  
+
+  <p>({{ weatherDescription }})</p>
+
+  <h3><b>Temperature: {{ temp }}</b></h3>
+
+  <p>Feels like ({{ feelsLike }})</p>
+ 
+  <button ion-button round [disabled]="disableNews" (click)="newsSearch()">News</button>
+
+ <ion-list>
+    <p>Total Stories in {{ country }}: {{ totalStories}} <p>
+    <ion-item *ngFor="let n of newsStories">
+      <a href="{{ n.url }}" target='_blank'><ion-card item-start> <img src="{{ n.urlToImage }}"></ion-card></a> 
+      <a href="{{ n.url }}" target='_blank'><p><u> Article Title: {{ n.title }}</u></p></a>
+      <a href="{{ n.url }}" target='_blank'><p ion-text color="secondary"> Article Description:{{ n.description }}</p></a>
+    </ion-item>
+  </ion-list>
+</ion-content>
